@@ -17,9 +17,10 @@ Features:
 
 ### Recommended C# setup
 
-Themes cannot ship settings, so copy this into your `settings.json`. It uses
-[csharp-ls](https://github.com/razzmatazz/csharp-language-server) with `semantic_tokens: "combined"` and maps its tokens to the theme styles
-(rules fall back to standard styles when another theme is active):
+Themes cannot ship settings, so copy this into your `settings.json`. It turns on `semantic_tokens: "combined"` and maps C# semantic tokens
+to the theme styles (rules fall back to standard styles when another theme is active).
+The rules work with both Zed's default **Roslyn** language server and [csharp-ls](https://github.com/razzmatazz/csharp-language-server).
+The `language_servers` line selects csharp-ls (lighter on memory); remove it to keep the default Roslyn.
 
 ```json
 {
@@ -179,6 +180,30 @@ Themes cannot ship settings, so copy this into your `settings.json`. It uses
           "rider.operator",
           "operator"
         ]
+      },
+      {
+        "token_type": "delegate",
+        "style": ["rider.delegate", "type"]
+      },
+      {
+        "token_type": "extensionMethod",
+        "style": ["rider.extension_method", "function"]
+      },
+      {
+        "token_type": "recordClass",
+        "style": ["rider.class", "type"]
+      },
+      {
+        "token_type": "recordStruct",
+        "style": ["rider.struct", "type"]
+      },
+      {
+        "token_type": "controlKeyword",
+        "style": ["rider.keyword", "keyword"]
+      },
+      {
+        "token_type": "stringVerbatim",
+        "style": ["rider.string", "string"]
       }
     ]
   },
@@ -192,8 +217,8 @@ Themes cannot ship settings, so copy this into your `settings.json`. It uses
 
 Then run `editor: restart language server`. Use `dev: open highlights tree view` to inspect tokens.
 
-Limitations (csharp-ls 0.28): delegates are reported as `class`, extension methods as `method`, and only the `static` modifier is sent,
-so those cannot be distinguished from classes / normal methods. Property, enum member and constant colors are
+With Roslyn, delegates, extension methods and records get their own colors. csharp-ls 0.28 reports delegates as `class` and
+extension methods as `method`, so there they look like classes / normal methods. Property, enum member and constant colors are
 inherited values in Rider's scheme and are approximated with the field/constant colors.
 
 Not affiliated with or endorsed by JetBrains. "Rider" is a trademark of JetBrains s.r.o.; it is used here only to describe the color palette.
@@ -210,11 +235,12 @@ Not affiliated with or endorsed by JetBrains. "Rider" is a trademark of JetBrain
 
 ### 推荐的 C# 配置
 
-主题无法附带设置，请把上方 JSON 片段复制到 `settings.json`：使用 csharp-ls，`semantic_tokens` 设为 `"combined"`，并通过
+主题无法附带设置，请把上方 JSON 片段复制到 `settings.json`：`semantic_tokens` 设为 `"combined"`，并通过
 `global_lsp_settings.semantic_token_rules` 把 token 映射到本主题的样式（切换到其他主题时会回退到通用样式）。
+同时支持 Zed 默认的 **Roslyn** 和 csharp-ls。`language_servers` 那一行是切换到更省内存的 csharp-ls，删掉即可继续用 Roslyn。
 之后执行 `editor: restart language server`；可用 `dev: open highlights tree view` 查看 token。
 
-限制（csharp-ls 0.28）：委托以 `class` 上报，扩展方法以 `method` 上报，修饰符只有 `static`，因此无法与类 / 普通方法区分。
+使用 Roslyn 时，委托、扩展方法、record 都有单独颜色；csharp-ls 0.28 把委托报成 `class`、扩展方法报成 `method`，所以看起来和类 / 普通方法一样。
 属性、枚举成员、常量在 Rider 配色中为继承值，这里用字段 / 常量颜色近似。
 
 本项目与 JetBrains 无关，也未获其认可。“Rider” 是 JetBrains s.r.o. 的商标，此处仅用于描述配色。
