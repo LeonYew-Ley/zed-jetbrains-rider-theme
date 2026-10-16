@@ -221,6 +221,22 @@ With Roslyn, delegates, extension methods and records get their own colors. csha
 extension methods as `method`, so there they look like classes / normal methods. Property, enum member and constant colors are
 inherited values in Rider's scheme and are approximated with the field/constant colors.
 
+### Recommended fonts
+
+To match Rider's look, use the same fonts as Rider. Themes can't set fonts, so add these to `settings.json`:
+
+- [JetBrains Mono](https://www.jetbrains.com/lp/mono/), Rider's default editor font (already bundled with Zed).
+- [HarmonyOS Sans SC](https://developer.huawei.com/consumer/cn/design/resource/), optional, for Chinese text (Rider's secondary font).
+
+```json
+{
+  "buffer_font_family": "JetBrains Mono",
+  "buffer_font_fallbacks": ["HarmonyOS Sans SC"],
+  "buffer_font_weight": 400,
+  "buffer_line_height": { "custom": 1.6 }
+}
+```
+
 Not affiliated with or endorsed by JetBrains. "Rider" is a trademark of JetBrains s.r.o.; it is used here only to describe the color palette.
 
 ## 中文
@@ -242,5 +258,14 @@ Not affiliated with or endorsed by JetBrains. "Rider" is a trademark of JetBrain
 
 使用 Roslyn 时，委托、扩展方法、record 都有单独颜色；csharp-ls 0.28 把委托报成 `class`、扩展方法报成 `method`，所以看起来和类 / 普通方法一样。
 属性、枚举成员、常量在 Rider 配色中为继承值，这里用字段 / 常量颜色近似。
+
+### 推荐字体
+
+想和 Rider 看起来一样，就用和 Rider 相同的字体。主题不能设置字体，请把下面的配置加到 `settings.json`：
+
+- [JetBrains Mono](https://www.jetbrains.com/lp/mono/)：Rider 默认的编辑器字体，Zed 已自带。
+- [HarmonyOS Sans SC（鸿蒙黑体）](https://developer.huawei.com/consumer/cn/design/resource/)：可选，用于显示中文，对应 Rider 的第二字体。
+
+上面的 JSON 同样适用：英文用 JetBrains Mono，中文回退到 HarmonyOS Sans SC，行高 1.6 接近 Rider 的行距。
 
 本项目与 JetBrains 无关，也未获其认可。“Rider” 是 JetBrains s.r.o. 的商标，此处仅用于描述配色。
