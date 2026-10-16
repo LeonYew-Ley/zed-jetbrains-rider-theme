@@ -1,10 +1,10 @@
 {
   "$schema": "https://zed.dev/schema/themes/v0.2.0.json",
-  "name": "Rider Exact",
+  "name": "JetBrains Rider Islands",
   "author": "generated from Rider 2026.2 RiderLight.xml / RiderDark.xml",
   "themes": [
     {
-      "name": "Rider Exact Light",
+      "name": "JetBrains Rider Islands Light",
       "appearance": "light",
       "style": {
         "background": "#F7F8FA",
@@ -245,7 +245,7 @@
       }
     },
     {
-      "name": "Rider Exact Dark",
+      "name": "JetBrains Rider Islands Dark",
       "appearance": "dark",
       "style": {
         "background": "#2B2D30",

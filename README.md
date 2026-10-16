@@ -4,7 +4,7 @@
 
 ## English
 
-Two themes, **Rider Exact Light** and **Rider Exact Dark**, whose editor and syntax colors were taken from the
+Two themes, **JetBrains Rider Islands Light** and **JetBrains Rider Islands Dark**, whose editor and syntax colors were taken from the
 default *Rider Light* and *Rider Dark* color schemes (Rider 2026.2).
 
 Features:
@@ -184,8 +184,8 @@ Themes cannot ship settings, so copy this into your `settings.json`. It uses
   },
   "theme": {
     "mode": "system",
-    "light": "Rider Exact Light",
-    "dark": "Rider Exact Dark"
+    "light": "JetBrains Rider Islands Light",
+    "dark": "JetBrains Rider Islands Dark"
   }
 }
 ```
@@ -200,7 +200,7 @@ Not affiliated with or endorsed by JetBrains. "Rider" is a trademark of JetBrain
 
 ## 中文
 
-两个主题：**Rider Exact Light** 和 **Rider Exact Dark**。编辑器与语法颜色取自 Rider 2026.2 自带的 *Rider Light* / *Rider Dark* 配色方案。
+两个主题：**JetBrains Rider Islands Light** 和 **JetBrains Rider Islands Dark**。编辑器与语法颜色取自 Rider 2026.2 自带的 *Rider Light* / *Rider Dark* 配色方案。
 
 功能：
 
